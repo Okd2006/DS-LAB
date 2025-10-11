@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define MAX 30;
+int top=-1
+int stack[MAX];
+char item;
+void push(char item){
+    if(top==MAX-1){
+        printf("Stack Overflow");
+    }
+    stack[++top]=item;
+}
+char pop(){
+    if(top==-1){
+        printf("Stack underfloe");
+    }
+    else{
+        return stack[top--];
+    }
+}
+char check(char exp[]){
+    int i;
+    char temp;
+    for(i=0;i<strlen(exp);i++){
+        if(exp[i]=="("||exp[i]=="{"||exp[i]=="["){
+            push(exp[i]);
+    }
+    if(exp[i]==")"||exp[i]=="}"||exp[i]=="]"){
+        if(top==-1){
+            printf("Right more than left");
+            return 0;
+        }
+        else{
+
+        }
+    }
+    temp=pop();
+}
+}
